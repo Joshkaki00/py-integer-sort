@@ -44,3 +44,12 @@ def bucket_sort(numbers, num_buckets=10):
     
     # Step 2: Create list of buckets to store numbers in subranges of input range
     buckets = [[] for _ in range(num_buckets)]
+    
+    # Step 3: Loop over given numbers and place each item in appropriate bucket
+    range_size = max_val - min_val
+    for num in numbers:
+        if range_size == 0:  # All numbers are the same
+            bucket_index = 0
+        else:
+            bucket_index = int((num - min_val) / range_size * (num_buckets - 1))
+        buckets[bucket_index].append(num)
