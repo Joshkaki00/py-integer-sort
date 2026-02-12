@@ -12,7 +12,10 @@ def counting_sort(numbers):
         return
     min_val = min(numbers)
     max_val = max(numbers)
-
+    
+    # Step 2: Create list of counts with a slot for each number in input range
+    range_size = max_val - min_val + 1
+    counts = [0] * range_size
 
 def bucket_sort(numbers, num_buckets=10):
     """Sort given numbers by distributing into buckets representing subranges,
