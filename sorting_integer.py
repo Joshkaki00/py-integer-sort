@@ -53,3 +53,14 @@ def bucket_sort(numbers, num_buckets=10):
         else:
             bucket_index = int((num - min_val) / range_size * (num_buckets - 1))
         buckets[bucket_index].append(num)
+    
+    # Step 4: Sort each bucket using any sorting algorithm
+    for bucket in buckets:
+        bucket.sort()  # or use another sorting algorithm
+    
+    # Step 5: Loop over buckets and append each bucket's numbers into output list
+    index = 0
+    for bucket in buckets:
+        for num in bucket:
+            numbers[index] = num
+            index += 1
