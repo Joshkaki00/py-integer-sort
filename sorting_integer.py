@@ -41,3 +41,6 @@ def bucket_sort(numbers, num_buckets=10):
         return
     min_val = min(numbers)
     max_val = max(numbers)
+    
+    # Step 2: Create list of buckets to store numbers in subranges of input range
+    buckets = [[] for _ in range(num_buckets)]
